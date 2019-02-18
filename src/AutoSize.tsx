@@ -48,6 +48,14 @@ class AutoSize extends React.Component<IAutoSizeProps, IAutoSizeState> {
   public _autoSizer?: HTMLDivElement;
   public _detectElementResize?: IDetectElementResizeProps;
 
+  constructor(props: IAutoSizeProps) {
+    super(props);
+    this.state = {
+      width: 0,
+      height: 0
+    };
+  }
+
   componentDidMount() {
     const {nonce} = this.props;
     if (
